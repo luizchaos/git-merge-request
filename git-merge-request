@@ -1,0 +1,23 @@
+#!/bin/python3.8
+import os, sys
+
+if __name__ == '__main__':
+        command = sys.argv[1] 
+                
+        if command == "help":
+                print("This command is intended to help create mr through command line")
+
+        elif command == "createmr":
+                print("Git MR Command-line tool\n\n")
+
+                targetBranch = input('Target Branch name: ')
+
+                title = input('Merge Request Name: ')
+
+
+                os.system(f"""
+                git push origin HEAD \
+                        -o merge_request.create \
+                        -o merge_request.remove_source_branch \
+                        -o merge_request.title="{title}" \
+                        -o merge_request.target="{targetBranch}""")
