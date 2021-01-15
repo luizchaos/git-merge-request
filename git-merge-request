@@ -15,9 +15,8 @@ if __name__ == '__main__':
                 title = input('Merge Request Name: ')
 
 
-                os.system(f"""
-                git push origin HEAD \
+                os.system(f"""git push origin HEAD \
                         -o merge_request.create \
                         -o merge_request.remove_source_branch \
-                        -o merge_request.title="{title}" \
-                        -o merge_request.target="{targetBranch}""")
+                        -o merge_request.title='{title}' \
+                        -o merge_request.target='{targetBranch}'""")
